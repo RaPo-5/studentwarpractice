@@ -1,56 +1,112 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
-
-    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
-
-    Copyright (c) 1997-2013 Oracle and/or its affiliates. All rights reserved.
-
-    The contents of this file are subject to the terms of either the GNU
-    General Public License Version 2 only ("GPL") or the Common Development
-    and Distribution License("CDDL") (collectively, the "License").  You
-    may not use this file except in compliance with the License.  You can
-    obtain a copy of the License at
-    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
-    or packager/legal/LICENSE.txt.  See the License for the specific
-    language governing permissions and limitations under the License.
-
-    When distributing the software, include this License Header Notice in each
-    file and include the License file at packager/legal/LICENSE.txt.
-
-    GPL Classpath Exception:
-    Oracle designates this particular file as subject to the "Classpath"
-    exception as provided by Oracle in the GPL Version 2 section of the License
-    file that accompanied this code.
-
-    Modifications:
-    If applicable, add the following below the License Header, with the fields
-    enclosed by brackets [] replaced by your own identifying information:
-    "Portions Copyright [year] [name of copyright owner]"
-
-    Contributor(s):
-    If you wish your version of this file to be governed by only the CDDL or
-    only the GPL Version 2, indicate your decision by adding "[Contributor]
-    elects to include this software in this distribution under the [CDDL or GPL
-    Version 2] license."  If you don't indicate a single choice of license, a
-    recipient has the option to distribute your version of this file under
-    either the CDDL, the GPL Version 2 or to extend the choice of license to
-    its licensees as provided above.  However, if you add GPL Version 2 code
-    and therefore, elected the GPL Version 2 license, then the option applies
-    only if the new code is made subject to such option by the copyright
-    holder.
-
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h:form prependId="false">
-            <h:inputText value="#{userBean.firstName}" />
-            <h:commandButton value="submit" />
-        </h:form>
-    </body>
+<html>
+<head>
+    <style>
+        body{
+   font-size:20px;
+            color: white;
+            background-size: cover;
+        }
+         .box{ width: 900px;
+       float:right;
+       border:1px solid none;}
+       .box ul li{
+           width: 120px;
+           float:left;
+           margin: 10px auto;
+           text-align: center;
+       }
+ .mainmenu
+.mainmenu a
+.mainmenu a:hover
+.mainmenu img{
+position: fixed;
+z-index: -1;
+top:0px; left:0px; width:100%; height: 100vh;
+opacity: 0.9;
+/*object-fit:cover;*/
+transition: all ease 0.5s;
+}
+   .wd{
+           width: 300px;
+           height: 539px;
+           background-color: black;
+           opacity: 0.8;
+           padding: 55px;
+       }
+       .wd h1{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: 300px;
+       }
+       .wd h4{
+           text-align: justify;
+           color:darkgray;
+           font-weight: 100px;
+       }
+       .wd h2{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: normal;
+           margin: 40px auto;
+       }
+       .opt form , input[type="button"]{
+           background-color: black;
+           color:white;
+         /* padding:10px;*/
+           margin:-14px auto;
+           padding-left: 50px;
+           padding-right: 50px;
+           text-align: center;
+           font-size: 16px;
+       }
+     form, input[type="button"] {
+       animation: glowing 300ms infinite;
+       font-weight: 500%;
+      }
+      @keyframes glowing {
+ 0% {
+   background-color: red;
+ }
+ 50% {
+   background-color: orange;
+ }
+ 100% {
+   background-color: blue;
+ }
+}
+   </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+var image = $(".mainmenu").find('img').attr('src');
+$(".mainmenu a").mouseover(function(){
+var newimg = $(this).attr('data-image');
+$(this).parent().find('img').attr("src", newimg);
+});
+});
+</script>
+   <div class="box">
+<div class="mainmenu">
+<img src="food.png">
+<a data-image = "food.png" href=""> Home</a>
+<a data-image = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Frestaurant-menu-card&psig=AOvVaw1TlAAQsNtKe9N67ryM6TUG&ust=1664115062241000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKi8zOrNrfoCFQAAAAAdAAAAABAE" href=""> Menu</a>
+<a href=""> FAQ</a>
+<a href=""> Contact</a>
+</div>
+   </div>
+   <div class="wd">
+<h1> Welcome to RaPo Restaurant and Hotels</h1>
+<h4> <i>Order delicious food online, 100% quality, safety and taste assured.</i></h4>
+<h2> Call 8688285051 for reservations</h2>
+<div class="opt">
+<form action="" method="post">
+<input type="button" value="ORDER NOW">
+<input type="button" value="HARRY UP">
+</form>
+</div>
+</div>
+</body>
 </html>
 
